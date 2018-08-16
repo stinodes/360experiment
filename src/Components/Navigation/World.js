@@ -32,11 +32,23 @@ class World extends React.Component<Props, State> {
   currentRoomName = () => {
     return this.state.navigation[this.state.navigation.length - 1];
   };
+  canGoBack = () => this.state.navigation.length !== 1;
 
   navigate = (roomName: string) => {
     this.setState(({ navigation }) => ({
       navigation: [...navigation, { roomName }],
     }));
+  };
+
+  goBack = () => {
+    this.setState(state => {
+      if (!this.canGoBack()) return state;
+      return {
+        navigation: state.navigation.filter(
+          (value, i) => i !== state.navigation.length - 1,
+        ),
+      };
+    });
   };
 
   setNavigation = (newNavigation: NavigationEntry[]) =>
@@ -49,8 +61,10 @@ class World extends React.Component<Props, State> {
     console.log(this.state.navigation);
     const value = {
       currentRoomName: roomName,
+      canGoBack: this.canGoBack(),
       navigation: this.state.navigation,
       navigate: this.navigate,
+      goBack: this.goBack,
       setNavigation: this.setNavigation,
     };
 

@@ -4,9 +4,8 @@ import { Link } from './Navigation/Link';
 
 const styles = StyleSheet.create({
   container: {
-    width: 200,
+    //width: 200,      //hier gebeurt iets vreemd met de hitbox indien width 200 is
     height: 200,
-    borderRadius: 100,
     backgroundColor: 'green',
     justifyContent: 'center',
     alignItems: 'center',

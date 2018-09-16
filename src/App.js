@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, Text, View, VrButton } from 'react-360';
-import rooms from '../data/rooms';
+import { StyleSheet, Text, View, VrButton} from 'react-360';
 import { Background, Pin, World } from './Components';
 import { Consumer, Room } from './Components/Navigation';
 import { Skyline } from './Skyline';
+import { Forest } from './Forest';
+import rooms from "../data/rooms";
+
 
 class App extends React.Component {
   render() {
@@ -11,24 +13,18 @@ class App extends React.Component {
       <World initialRoom="forest">
         <View
           style={{
-            width: 1000,
+            width: 720,
             height: 600,
             justifyContent: 'center',
             alignItems: 'center',
           }}>
-          <Room
-            roomName="forest"
-            image="https://images.pexels.com/photos/358482/pexels-photo-358482.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260">
-            <Pin color="green" to="skyline">
-              To Skyline
-            </Pin>
-          </Room>
+          <Forest />
 
           <Skyline />
 
           <Room
             roomName="street"
-            image="https://d36tnp772eyphs.cloudfront.net/blogs/1/2006/11/360-panorama-matador-seo.jpg">
+            image="static_assets/jeans.jpg">
             <Pin color="blue" to="forest">
               To Forest
             </Pin>

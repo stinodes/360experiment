@@ -33,6 +33,7 @@ class World extends React.Component<Props, State> {
     return this.state.navigation[this.state.navigation.length - 1];
   };
 
+
   navigate = (roomName: string) => {
     this.setState(({ navigation }) => ({
       navigation: [...navigation, { roomName }],
@@ -46,6 +47,7 @@ class World extends React.Component<Props, State> {
     const { children } = this.props;
 
     const { roomName } = this.currentRoomName();
+    console.log(roomName);
     console.log(this.state.navigation);
     const value = {
       currentRoomName: roomName,

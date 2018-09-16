@@ -24,20 +24,17 @@ class Forest extends React.Component<Props> {
     render() {
         return (
             <Room
-                roomName="skyline"
+                roomName="forest"
                 image="../static_assets/angela.jpg">
                 <View style={styles.panel}>
                     <View style={styles.column}>
-                        <View style={styles.titleBox}>
-                            <Text style={styles.title}>The Forest</Text>
-                        </View>
                     </View>
                     <View style={styles.column}>
                         <Pin color="orange" to="street">
                             To Street
                         </Pin>
                         <Pin color="green" to="skyline">
-                            To Forest
+                            To Skyline
                         </Pin>
                     </View>
                 </View>
